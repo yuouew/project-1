@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>welcome!!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1 id="message">ready to begin?</h1>
+
+    <ul>
+        <li onclick="nextPage('yes')">yes</li>
+        <li onclick="nextPage()">no</li>
+        <li onclick="nextPage()">...</li>
+
+    </ul>
+
+    <script>
+        function nextPage(item) {
+            if (item === 'yes') {
+                window.location.href = "pg3.html";
+            } else {
+                var messages = ["hmm that doesnt sound right. try again.", "that cant be right, try again.", "try again."];
+                var randomIndex = Math.floor(Math.random() * messages.length);
+                var message = document.getElementById("message");
+                message.textContent = messages[randomIndex];
+            }
+        }
+    </script>
+</body>
